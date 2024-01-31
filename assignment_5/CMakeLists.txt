@@ -73,3 +73,7 @@ ENABLE_TESTING()
 
 # create an executables in the app folder
 add_executable( run_app "app/main.cpp" ${USER_FILES_1} )
+<<<<<<<< HEAD:CU_CompSci_Projects/assignment_5/CMakeLists.txt
+
+========
+>>>>>>>> af4fe0efdf7b187e04b9b41e4583b06fb860a2f1:Assignment_6/CMakeLists.txt

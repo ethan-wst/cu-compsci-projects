@@ -22,7 +22,12 @@ file(GLOB USER_FILES_1
 file(GLOB TEST_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} 
 "tests/test*.cpp"
 )
+<<<<<<<< HEAD:CU_CompSci_Projects/assignment_6/CMakeLists.txt
 
+========
+add_library(BookCollectionBase SHARED IMPORTED)
+set_property(TARGET BookCollectionBase PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/library/BookCollectionBase.so")
+>>>>>>>> af4fe0efdf7b187e04b9b41e4583b06fb860a2f1:Assignment_7/CMakeLists.txt
 # Try to Find GTest
 find_package(GTest QUIET)
 
@@ -32,7 +37,11 @@ if(GTEST_FOUND)
 
 	# create an executable for all tests 
 	add_executable( run_tests ${TEST_FILES} ${USER_FILES_1} )
+<<<<<<<< HEAD:CU_CompSci_Projects/assignment_6/CMakeLists.txt
 	target_link_libraries( run_tests gtest_main ${GTEST_LIBRARIES} pthread)
+========
+    target_link_libraries( run_tests gtest_main ${GTEST_LIBRARIES} pthread BookCollectionBase)
+>>>>>>>> af4fe0efdf7b187e04b9b41e4583b06fb860a2f1:Assignment_7/CMakeLists.txt
 
 else()
 	message(">> Couldn't find Local GTest library, Downloading one instead ...")
@@ -65,12 +74,20 @@ else()
 	# create an executable for all tests 
 	add_executable( run_tests ${TEST_FILES} ${USER_FILES_1} )
 
+<<<<<<<< HEAD:CU_CompSci_Projects/assignment_6/CMakeLists.txt
 	target_link_libraries( run_tests gtest_main)
+========
+	target_link_libraries( run_tests gtest_main BookCollectionBase)
+>>>>>>>> af4fe0efdf7b187e04b9b41e4583b06fb860a2f1:Assignment_7/CMakeLists.txt
 
 endif()
 
 ENABLE_TESTING()
 
 # create an executables in the app folder
+<<<<<<<< HEAD:CU_CompSci_Projects/assignment_6/CMakeLists.txt
 add_executable( run_app "app/main.cpp" ${USER_FILES_1} )
-
+========
+add_executable(run_app "app/main.cpp" ${USER_FILES_1} )
+target_link_libraries(run_app BookCollectionBase)
+>>>>>>>> af4fe0efdf7b187e04b9b41e4583b06fb860a2f1:Assignment_7/CMakeLists.txt
