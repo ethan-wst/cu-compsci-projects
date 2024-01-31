@@ -1,4 +1,0 @@
-Array doubled: 0
-Total number of cases returned after the query: 0
-Queried Cases
----------------------------------------
